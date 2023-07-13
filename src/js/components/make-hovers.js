@@ -35,7 +35,5 @@ for (let i = 0; i < arrays.length; i++) {
 				});
 			}
 		};
-		console.log(i, arrays.length - i);
 	});
-	console.log(arrays[i]);
 }
