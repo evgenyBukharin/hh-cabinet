@@ -137,6 +137,14 @@
 				z-index: 100;
 			}
 		}
+		&-pages {
+			position: relative;
+			display: flex;
+			align-items: center;
+		}
+		&-page {
+			margin-right: 11px;
+		}
 		& span {
 			text-align: center;
 			width: 100%;
@@ -144,6 +152,7 @@
 			-webkit-line-clamp: 1;
 			-webkit-box-orient: vertical;
 			white-space: nowrap;
+			line-height: 17px;
 		}
 		& a {
 			text-decoration: none;
@@ -156,6 +165,58 @@
 			font-weight: 600;
 			line-height: 15px;
 			text-transform: uppercase;
+			margin: 0;
+		}
+	}
+	&__pagination {
+		position: relative;
+		width: fit-content !important;
+		bottom: unset !important;
+		left: unset !important;
+		display: flex;
+		align-items: center;
+	}
+	&__bullet {
+		position: relative;
+		background: transparent;
+		font-family: var(--second-family);
+		font-size: 13px;
+		font-weight: 600;
+		line-height: 15px;
+		margin-right: 26px !important;
+		margin-left: 0 !important;
+		opacity: 1;
+		width: fit-content !important;
+		height: 100% !important;
+		line-height: 18px;
+		transition: color 0.3s linear;
+		&:last-child {
+			margin-right: 0 !important;
+		}
+		&:first-child {
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: -13px;
+				height: 100%;
+				width: 1px;
+				background: var(--black-color);
+				font-weight: 700;
+			}
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: -13px;
+			height: 100%;
+			width: 1px;
+			background: var(--black-color);
+			font-weight: 700;
+		}
+		&-active {
+			color: var(--blue-color);
 		}
 	}
 	&__row {
@@ -177,10 +238,41 @@
 	}
 	&__footer {
 		border-top: 1px solid rgba(225, 83, 53, 0.1);
-		height: 30px;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		padding: 22px;
+	}
+	&__button {
+		&-control {
+			font-family: var(--second-family);
+			font-size: 11px;
+			font-weight: 600;
+			line-height: 15px;
+			text-transform: uppercase;
+			&:disabled {
+				color: var(--black-color);
+			}
+		}
+		&-prev {
+			margin-right: 25px;
+		}
+		&-next {
+			margin-left: 27px;
+		}
+		&-last {
+			position: relative;
+			margin-left: 27px;
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: -13px;
+				height: 100%;
+				width: 1px;
+				background: var(--black-color);
+				font-weight: 700;
+			}
+		}
 	}
 }
