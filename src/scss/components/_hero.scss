@@ -49,6 +49,11 @@
 		border-radius: 5px;
 		padding: 10px;
 	}
+	&__slider {
+		&-pagination {
+			max-width: 82px;
+		}
+	}
 	&__text {
 		position: relative;
 		padding-top: 19px;
@@ -170,23 +175,24 @@
 	}
 	&__pagination {
 		position: relative;
-		width: fit-content !important;
+		// width: fit-content !important;
 		bottom: unset !important;
 		left: unset !important;
-		display: flex;
-		align-items: center;
+		// display: flex;
+		// align-items: center;
 	}
 	&__bullet {
+		display: block;
 		position: relative;
 		background: transparent;
 		font-family: var(--second-family);
 		font-size: 13px;
 		font-weight: 600;
 		line-height: 15px;
-		margin-right: 26px !important;
+		// margin-right: 26px !important;
 		margin-left: 0 !important;
 		opacity: 1;
-		width: fit-content !important;
+		// width: fit-content !important;
 		height: 100% !important;
 		line-height: 18px;
 		transition: color 0.3s linear;
