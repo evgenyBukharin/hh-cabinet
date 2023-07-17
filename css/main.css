@@ -147,6 +147,9 @@ html {
   border-radius: 5px;
   padding: 10px
 }
+.hero__slider-pagination {
+  max-width: 82px
+}
 .hero__text {
   position: relative;
   padding-top: 19px;
@@ -281,30 +284,18 @@ html {
 }
 .hero__pagination {
   position: relative;
-  width: -webkit-fit-content!important;
-  width: -moz-fit-content!important;
-  width: fit-content!important;
   bottom: unset!important;
-  left: unset!important;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center
+  left: unset!important
 }
 .hero__bullet {
+  display: block;
   position: relative;
   background: 0 0;
   font-family: var(--second-family);
   font-size: 13px;
   font-weight: 600;
-  margin-right: 26px!important;
   margin-left: 0!important;
   opacity: 1;
-  width: -webkit-fit-content!important;
-  width: -moz-fit-content!important;
-  width: fit-content!important;
   height: 100%!important;
   line-height: 18px;
   -webkit-transition: color .3s linear;

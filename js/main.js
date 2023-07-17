@@ -10587,7 +10587,7 @@ const slider = new core(document.querySelector(".hero__slider"), {
     clickable: true,
     bulletActiveClass: "hero__bullet-active",
     renderBullet: function (index, className) {
-      return `<span class="hero__bullet ${className}">${index + 1}</span>`;
+      return `<span class="hero__bullet swiper-slide ${className}">${index + 1}</span>`;
     }
   },
   navigation: {
@@ -10608,9 +10608,22 @@ slides.forEach(slide => {
     rows[9].style.borderBottom = "none";
   }
 });
+
+// функционал кнопки для последней страницы
 const lastButton = document.querySelector(".hero__button-last");
 lastButton.addEventListener("click", () => {
   slider.slideTo(slides.length - 1, 1000);
+});
+const bulletsSlider = new core(document.querySelector(".hero__slider-pagination"), {
+  slidesPerView: 3,
+  speed: 600,
+  spaceBetween: 26,
+  clickable: true,
+  centeredSlides: true,
+  navigation: {
+    nextEl: ".hero__button-next",
+    prevEl: ".hero__button-prev"
+  }
 });
 ;// CONCATENATED MODULE: ./src/js/_components.js
 
