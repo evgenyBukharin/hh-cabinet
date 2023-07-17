@@ -1,22 +1,5 @@
-import Swiper, { Navigation, Pagination } from "swiper";
-Swiper.use([Navigation, Pagination]);
-
-const slider = new Swiper(document.querySelector(".hero__slider"), {
-	slidesPerView: 1,
-	speed: 600,
-	pagination: {
-		el: ".hero__pagination",
-		clickable: true,
-		bulletActiveClass: "hero__bullet-active",
-		renderBullet: function (index, className) {
-			return `<span class="hero__bullet swiper-slide ${className}">${index + 1}</span>`;
-		},
-	},
-	navigation: {
-		nextEl: ".hero__button-next",
-		prevEl: ".hero__button-prev",
-	},
-});
+import Swiper, { Navigation, Pagination, Thumbs } from "swiper";
+Swiper.use([Navigation, Pagination, Thumbs]);
 
 // задаем общее количество слайдов
 const allItemsSpan = document.querySelector(".hero__text-all-value");
@@ -46,5 +29,25 @@ const bulletsSlider = new Swiper(document.querySelector(".hero__slider-paginatio
 	navigation: {
 		nextEl: ".hero__button-next",
 		prevEl: ".hero__button-prev",
+	},
+});
+
+const slider = new Swiper(document.querySelector(".hero__slider"), {
+	slidesPerView: 1,
+	speed: 600,
+	pagination: {
+		el: ".hero__pagination",
+		clickable: true,
+		bulletActiveClass: "hero__bullet-active",
+		renderBullet: function (index, className) {
+			return `<span class="hero__bullet swiper-slide ${className}">${index + 1}</span>`;
+		},
+	},
+	navigation: {
+		nextEl: ".hero__button-next",
+		prevEl: ".hero__button-prev",
+	},
+	thumbs: {
+		swiper: bulletsSlider,
 	},
 });
